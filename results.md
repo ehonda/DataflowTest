@@ -47,3 +47,21 @@
 [13:31:30 INF] Generating B-2
 [13:31:31 INF] ["WorkItem { Name = A-2 }", "WorkItem { Name = B-2 }"]
 ```
+
+## Concat
+
+```console
+[13:41:39 INF] Using Concat
+[13:41:39 INF] Generating A-0
+[13:41:40 INF] WorkItem { Name = A-0 }
+[13:41:40 INF] Generating A-1
+[13:41:41 INF] WorkItem { Name = A-1 }
+[13:41:41 INF] Generating A-2
+[13:41:42 INF] WorkItem { Name = A-2 }
+[13:41:42 INF] Generating B-0
+[13:41:43 INF] WorkItem { Name = B-0 }
+[13:41:43 INF] Generating B-1
+[13:41:44 INF] WorkItem { Name = B-1 }
+[13:41:44 INF] Generating B-2
+[13:41:45 INF] WorkItem { Name = B-2 }
+```

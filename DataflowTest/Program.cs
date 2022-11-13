@@ -6,5 +6,6 @@ var logger = new LoggerConfiguration()
     .CreateLogger();
 
 // await Processor.Sequential(logger);
-await Processor.Zip(logger);
+// await Processor.Zip(logger);
 // await Processor.ZipAwait(logger);
+await Processor.Concat(logger);

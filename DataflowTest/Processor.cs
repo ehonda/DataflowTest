@@ -36,4 +36,13 @@ public static class Processor
             logger.Information("{Pair}", pair);
         }
     }
+    
+    public static async Task Concat(ILogger logger)
+    {
+        logger.Information("Using {Method}", nameof(Concat));
+        await foreach (var item in ItemSource.A(logger).Concat(ItemSource.B(logger)))
+        {
+            logger.Information("{Item}", item);
+        }
+    }
 }
