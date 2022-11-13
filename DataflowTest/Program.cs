@@ -9,4 +9,5 @@ var logger = new LoggerConfiguration()
 // await Processor.Zip(logger);
 // await Processor.ZipAwait(logger);
 // await Processor.Concat(logger);
-await Processor.SequentialParallel(logger);
+// await Processor.SequentialParallel(logger);
+await Pipeline.Run(logger);

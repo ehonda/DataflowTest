@@ -85,3 +85,17 @@
 [20:34:55 INF] WorkItem { Name = A-2 }
 [20:34:55 INF] WorkItem { Name = B-2 }
 ```
+
+## Pipeline.Run
+
+```console
+[21:24:53 INF] Generating B-0
+[21:24:53 INF] Generating A-0
+[21:24:54 INF] Generating A-1
+[21:24:54 INF] Generating B-1
+[21:24:54 INF] ["WorkItem { Name = A-0 }", "WorkItem { Name = B-0 }"]
+[21:24:55 INF] Generating B-2
+[21:24:55 INF] Generating A-2
+[21:24:55 INF] ["WorkItem { Name = A-1 }", "WorkItem { Name = B-1 }"]
+[21:24:56 INF] ["WorkItem { Name = A-2 }", "WorkItem { Name = B-2 }"]
+```
