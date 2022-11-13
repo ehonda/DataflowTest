@@ -10,12 +10,12 @@ public static class Processor
         
         await foreach (var item in ItemSource.A(logger))
         {
-            Console.WriteLine(item);
+            logger.Information("{Item}", item);
         }
 
         await foreach (var item in ItemSource.B(logger))
         {
-            Console.WriteLine(item);
+            logger.Information("{Item}", item);
         }
     }
 
@@ -24,7 +24,7 @@ public static class Processor
         logger.Information("Using {Method}", nameof(Zip));
         await foreach (var pair in ItemSource.A(logger).Zip(ItemSource.B(logger)))
         {
-            Console.WriteLine(pair);
+            logger.Information("{Pair}", pair);
         }
     }
     
