@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DataflowTest;
+using Serilog;
+
+var logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
+
+// await Processor.Sequential();
+// await Processor.Zip();
+await Processor.ZipAwait(logger);
