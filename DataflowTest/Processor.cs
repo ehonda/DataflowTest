@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using System.Runtime.CompilerServices;
+using Serilog;
 
 namespace DataflowTest;
 
@@ -17,6 +18,27 @@ public static class Processor
         {
             logger.Information("{Item}", item);
         }
+    }
+
+    public static async Task SequentialFrom(IAsyncEnumerable<WorkItem> items, ILogger logger,
+        [CallerArgumentExpression(nameof(items))] string? itemsExpression = null)
+    {
+        logger.Information("Using {Method} with items {Items}", nameof(SequentialFrom), itemsExpression);
+        
+        await foreach (var item in items)
+        {
+            logger.Information("{Item}", item);
+        }
+    }
+
+    public static async Task SequentialParallel(ILogger logger)
+    {
+        logger.Information("Using {Method}", nameof(SequentialParallel));
+
+        var taskA = Task.Run(() => SequentialFrom(ItemSource.A(logger), logger));
+        var taskB = Task.Run(() => SequentialFrom(ItemSource.B(logger), logger));
+
+        await Task.WhenAll(taskA, taskB);
     }
 
     public static async Task Zip(ILogger logger)

@@ -65,3 +65,23 @@
 [13:41:44 INF] Generating B-2
 [13:41:45 INF] WorkItem { Name = B-2 }
 ```
+
+## SequentialParallel
+
+```console
+[20:34:52 INF] Using SequentialParallel
+[20:34:52 INF] Using SequentialFrom with items ItemSource.B(logger)
+[20:34:52 INF] Using SequentialFrom with items ItemSource.A(logger)
+[20:34:52 INF] Generating B-0
+[20:34:52 INF] Generating A-0
+[20:34:53 INF] WorkItem { Name = B-0 }
+[20:34:53 INF] WorkItem { Name = A-0 }
+[20:34:53 INF] Generating B-1
+[20:34:53 INF] Generating A-1
+[20:34:54 INF] WorkItem { Name = B-1 }
+[20:34:54 INF] Generating B-2
+[20:34:54 INF] WorkItem { Name = A-1 }
+[20:34:54 INF] Generating A-2
+[20:34:55 INF] WorkItem { Name = A-2 }
+[20:34:55 INF] WorkItem { Name = B-2 }
+```
